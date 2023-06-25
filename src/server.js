@@ -15,4 +15,4 @@ app.get('/api/user', (req, res) => {
 })
 
 
-app.listen(5000, () => console.log('Pro server is running on port 5000'));
+app.listen(5000, () => console.log('Pro e-commerce server is running on port 5000'));
