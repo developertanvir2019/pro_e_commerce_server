@@ -9,6 +9,9 @@ const isLoggedIn = (req, res, next) => {
 app.get('/test', (req, res) => {
     res.status(200).send('server is running on pro e commerce')
 })
+app.get('/', (req, res) => {
+    res.status(200).send('server is running on pro e commerce')
+})
 
 app.get('/api/user', (req, res) => {
     res.status(200).send('server is running on pro e commerce')
