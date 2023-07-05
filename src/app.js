@@ -3,7 +3,8 @@ const morgan = require('morgan')
 const bodyParser = require('body-parser')
 const createError = require('http-errors')
 const xssClean = require('xss-clean')
-const rateLimit = require('express-rate-limit')
+const rateLimit = require('express-rate-limit');
+const userRouter = require('./routers/userRouter');
 
 
 const app = express();
@@ -19,13 +20,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(xssClean());
 
-app.get('/test', (req, res) => {
-    res.status(200).send('server is running on pro e commerce')
-})
+app.use('/api/user', userRouter)
 
-app.get('/api/user', (req, res) => {
-    res.status(200).send('server is running on pro e commerce')
-})
+
+
+
+
 
 // error handle client
 app.use((req, res, next) => {
